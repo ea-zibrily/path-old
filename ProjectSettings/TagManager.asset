@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - player
+  - item
+  - enemy
+  - boss
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 3800210679
+    locked: 0
+  - name: Foreground
+    uniqueID: 645123953
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Item
+    uniqueID: 49902755
+    locked: 0
+  - name: Character
+    uniqueID: 3625060789
+    locked: 0
