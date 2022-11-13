@@ -8,6 +8,7 @@ TagManager:
   - item
   - enemy
   - boss
+  - weapon
   layers:
   - Default
   - TransparentFX

@@ -57,82 +57,82 @@ public class charaMove : MonoBehaviour
         if (isMove)
         {
             /// <summary>
-        /// setup sprint mechanic
-        /// </summary>
-        /// 
+            /// setup sprint mechanic
+            /// </summary>
+            /// 
 
-        if (manager.hasGenerate)
-        {
-            if (Input.GetKey(KeyCode.LeftShift) && !isSprint && manager.energy >= 0)
+            if (manager.hasGenerate)
             {
-                moveSpeed = sprintSpeed;
-                isSprint = true;
-                Debug.Log("ini speed sprint" + moveSpeed);
+                if (Input.GetKey(KeyCode.LeftShift) && !isSprint && manager.energy >= 0)
+                {
+                    moveSpeed = sprintSpeed;
+                    isSprint = true;
+                    Debug.Log("ini speed sprint" + moveSpeed);
+                }
             }
-        }
 
-        if (!Input.GetKey(KeyCode.LeftShift) && isSprint)
-        {
-            moveSpeed = oriSpeed;
-            isSprint = false;
-            Debug.Log("ini speed normal" + moveSpeed);
-        }
+            if (!Input.GetKey(KeyCode.LeftShift) && isSprint)
+            {
+                moveSpeed = oriSpeed;
+                isSprint = false;
+                Debug.Log("ini speed normal" + moveSpeed);
+            }
 
-        myRb.velocity = new Vector2((moveHori * moveSpeed), (moveVer * moveSpeed));
+            myRb.velocity = new Vector2((moveHori * moveSpeed), (moveVer * moveSpeed));
 
 
-        /// <summary>
-        /// setup sprint mechanic
-        /// </summary>
-        if (moveHori > 0 && isLeft)
-        {
-            //transform.localScale = new Vector2(1, 1);
-            mySprite.flipX = false;
-            isLeft = false;
-        }
-        if (moveHori < 0 && !isLeft)
-        {
-            //transform.localScale = new Vector2(-1, 1);
-            mySprite.flipX = true;
-            isLeft = true;
-        }
+            /// <summary>
+            /// setup sprint mechanic
+            /// </summary>
+            if (moveHori > 0 && isLeft)
+            {
+                transform.localScale = new Vector2(1, 1);
+                //mySprite.flipX = false;
+                isLeft = false;
+            }
+            if (moveHori < 0 && !isLeft)
+            {
+                transform.localScale = new Vector2(-1, 1);
+                //mySprite.flipX = true;
+                isLeft = true;
+            }
 
-        //Animation
-        //left right
-        if (moveHori != 0)
-        {
-            myAnim.SetTrigger("walk");
-            isUp = false;
-            isDown = false;
-        }
-        if (moveHori == 0 && !isUp && !isDown)
-        {
-            myAnim.SetTrigger("idle");
-        }
+            //Animation
+            //left right
+            if (moveHori != 0)
+            {
+                myAnim.SetTrigger("walk");
+                isUp = false;
+                isDown = false;
+            }
+            if (moveHori == 0 && !isUp && !isDown)
+            {
+                myAnim.SetTrigger("idle");
+            }
 
-        //up
-        if (moveVer > 0)
-        {
-            myAnim.SetTrigger("up");
-            isUp = true;
-            isDown = false;
-        }
-        if (moveVer == 0 && isUp)
-        {
-            myAnim.SetTrigger("upidle");
-        }
+            //up
+            if (moveVer > 0)
+            {
+                myAnim.SetTrigger("up");
+                isUp = true;
+                isDown = false;
+            }
+            if (moveVer == 0 && isUp)
+            {
+                myAnim.SetTrigger("upidle");
+            }
 
-        //down
-        if (moveVer < 0)
-        {
-            myAnim.SetTrigger("down");
-            isDown = true;
-            isUp = false;
-        }
-        if (moveVer == 0 && isDown)
-        {
-            myAnim.SetTrigger("downidle");
-        }
+            //down
+            if (moveVer < 0)
+            {
+                myAnim.SetTrigger("down");
+                isDown = true;
+                isUp = false;
+            }
+            if (moveVer == 0 && isDown)
+            {
+                myAnim.SetTrigger("downidle");
+            }
         }
     }
 
