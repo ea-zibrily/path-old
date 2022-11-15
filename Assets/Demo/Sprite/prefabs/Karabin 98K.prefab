@@ -126,7 +126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPre: {fileID: 805035358335362061, guid: c81ed0df23c2a3f499e7594497102923, type: 3}
   firePoint: {fileID: 5353241141978106491}
-  bulletForce: 20
+  isShoot: 0
+  _SOWeapDef: {fileID: 11400000, guid: 6884a162c0ece984e8ea956bf695ac7b, type: 2}
 --- !u!95 &2799653704538482537
 Animator:
   serializedVersion: 3

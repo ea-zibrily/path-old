@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Karabin US30 M1
   m_EditorClassIdentifier: 
   weaponName: Karabin US30 M1
-  weaponObj: {fileID: 5500983695264634661, guid: 896d799812a1c0a4b854bf93c6378986, type: 3}
   weaponType: 1
   weaponPassive: 1
+  weaponDescription: "Karabin US 30 M1 merupakan senjata \nkeenam yang dapat player
+    beli saat \nmenjadi Weapon Mastery level 5. \nKarabin memiliki design yang tidak
+    \njauh dari Bayonet, namun Karabin \nterlihat lebih kecil dan mampu \nmenampung
+    banyak peluru. \nKarabin termasuk tipe senjata range."
   weaponDamage: 45
-  weaponAmmo: 36
-  weaponRadius: 4.5
-  isLifeDrain: 0
-  isBaiter: 1
-  isDoubleType: 0
-  isLongRange: 0
+  weaponAmmo: 9
+  weaponMagazine: 4
+  weaponRadius: 3.3
+  velocitySpeed: 20

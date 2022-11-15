@@ -5,19 +5,22 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon/New Weapon", order = 1)]
 public class weaponDefinition : ScriptableObject
 {
-    [Header("Basic Weapon Traits")]
+    [Header("Basic Weapon Description")]
     public string weaponName;
-    public GameObject weaponObj;
+    //public GameObject weaponObj;
     public WeaponType weaponType;
     public WeaponPassive weaponPassive;
+
+    [Multiline]
+    //multiline dipake biar bisa add enter d inspector
+    public string weaponDescription;
+
+    [Header("Technical Weapon Traits")]
     public int weaponDamage;
     public int weaponAmmo;
+    public int weaponMagazine;
     public float weaponRadius;
-    public bool isLifeDrain;
-    public bool isBaiter;
-    public bool isDoubleType;
-    public bool isLongRange;
-
+    public float velocitySpeed;
 }
 
 

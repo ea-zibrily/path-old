@@ -9,18 +9,18 @@ public class weaponManager : MonoBehaviour
     public int maxAmmo;
     public TextMeshProUGUI ammoUI;
     public GameObject noAmmo;
-    weaponShoot weapon;
+    weaponShoot weaponS;
 
 
     private void Awake()
     {
-        weapon = GameObject.FindGameObjectWithTag("weapon").GetComponent<weaponShoot>();
+        weaponS = GameObject.FindGameObjectWithTag("weapon").GetComponent<weaponShoot>();
         ammoIndex = maxAmmo;
     }
 
     private void Update()
     {
-        if (ammoIndex > 0)
+        if (ammoIndex >= 0)
         {
             useWeapon();
         }
@@ -32,10 +32,12 @@ public class weaponManager : MonoBehaviour
 
     void useWeapon()
     {
-        if (weapon.isShoot)
+        /*
+        if (weaponS.isShoot)
         {
             ammoIndex -= 1;
         }
+        */
         ammoUI.text = ammoIndex + ("/") + maxAmmo;
     }
 

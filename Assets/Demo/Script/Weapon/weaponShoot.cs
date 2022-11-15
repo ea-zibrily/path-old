@@ -7,8 +7,11 @@ public class weaponShoot : MonoBehaviour
     [Header("Bullet Component")]
     public GameObject bulletPre;
     public Transform firePoint;
-    public float bulletForce;
     public bool isShoot;
+
+    [Header("Scriptable Object Component")]
+    public weaponDefinition _SOWeapDef;
+
 
     [Header("Reference")]
     Rigidbody2D myRb;
@@ -33,27 +36,27 @@ public class weaponShoot : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 myAnim.SetTrigger("shoot");
+                //isShoot = true;
             }
             if (!Input.GetKeyDown(KeyCode.Space))
             {
-                isShoot = false;
+                //isShoot = false;
             }
         }
     }
 
-    void shoot()
+    public void shoot()
     {
         bullet = Instantiate(bulletPre, firePoint.position, firePoint.rotation);
         myRb = bullet.GetComponent<Rigidbody2D>();
         if (charaDir.isLeft)
         {
-            myRb.AddForce((firePoint.right * -1) * bulletForce, ForceMode2D.Impulse);
-            isShoot = true;
+            myRb.AddForce((firePoint.right * -1) * _SOWeapDef.velocitySpeed, ForceMode2D.Impulse);
         }
         if (!charaDir.isLeft)
         {
-            myRb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
-            isShoot = true;
+            myRb.AddForce(firePoint.right * _SOWeapDef.velocitySpeed, ForceMode2D.Impulse);
         }
+        weapManage.ammoIndex--;
     }
 }
