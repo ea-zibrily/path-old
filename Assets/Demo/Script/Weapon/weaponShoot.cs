@@ -12,37 +12,55 @@ public class weaponShoot : MonoBehaviour
     [Header("Scriptable Object Component")]
     public weaponDefinition _SOWeapDef;
 
+    [Header("Ammo")]
+    public int currentAmmo;
+    public int currentMagazine;
+
 
     [Header("Reference")]
     Rigidbody2D myRb;
     Animator myAnim;
     GameObject bullet;
     charaMove charaDir;
-    weaponManager weapManage;
 
 
     void Awake()
     {
         myAnim = GetComponent<Animator>();
         charaDir = GameObject.Find("Chara").GetComponent<charaMove>();
-        weapManage = GameObject.Find("Game Manager").GetComponent<weaponManager>();
+    }
+
+    void Start()
+    {
+        currentAmmo = _SOWeapDef.weaponAmmo;
+        currentMagazine = _SOWeapDef.weaponMagazine;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (weapManage.ammoIndex > 0)
+        if (currentAmmo > 0)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 myAnim.SetTrigger("shoot");
-                //isShoot = true;
-            }
-            if (!Input.GetKeyDown(KeyCode.Space))
-            {
-                //isShoot = false;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            //myAnim.SetTrigger("reload");
+            weapReload();
+        }
+        
+        /*
+        //destroy bullet - masih bug not working
+        if (Vector2.Distance(firePoint.position, bulletPre.transform.position) > 5f)
+        {
+            Destroy(bulletPre.gameObject);
+        }
+        */
+
     }
 
     public void shoot()
@@ -57,6 +75,41 @@ public class weaponShoot : MonoBehaviour
         {
             myRb.AddForce(firePoint.right * _SOWeapDef.velocitySpeed, ForceMode2D.Impulse);
         }
-        weapManage.ammoIndex--;
+        currentAmmo--;
+    }
+
+    void weapReload()
+    {
+        int reloadAmm = _SOWeapDef.weaponAmmo - currentAmmo;
+        reloadAmm = (currentMagazine - reloadAmm) >= 0 ? reloadAmm : currentMagazine;
+
+        currentAmmo += reloadAmm;
+        currentMagazine -= reloadAmm;
+    }
+
+    public void addAmmo(int pickAmmo)
+    {
+        int sliceAmmo = pickAmmo - currentAmmo;
+        int lostAmmo = pickAmmo - sliceAmmo;
+
+        if (currentAmmo <= 0)
+        {
+            currentAmmo += pickAmmo;
+        }
+
+        if (currentAmmo > 0)
+        {
+            currentAmmo += sliceAmmo;
+        }
+
+        if (currentAmmo >= _SOWeapDef.weaponAmmo)
+        {
+            currentMagazine += lostAmmo;
+        }
+
+        if (currentMagazine > _SOWeapDef.weaponMagazine)
+        {
+            currentMagazine = _SOWeapDef.weaponMagazine;
+        }
     }
 }

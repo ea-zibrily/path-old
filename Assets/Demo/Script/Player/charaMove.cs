@@ -11,13 +11,17 @@ public class charaMove : MonoBehaviour
     public bool isLeft, isUp, isDown;
     public bool isSprint, isMove;
 
-    [Header("Attack")]
+    [Header("Particle")]
+    public GameObject dustPart;
+    public Transform dustPoint;
 
     [Header("Reference")]
+    public charaManager manager;
     Rigidbody2D myRb;
     Animator myAnim;
     SpriteRenderer mySprite;
-    public charaManager manager;
+
+
 
     void Awake()
     {
@@ -59,7 +63,6 @@ public class charaMove : MonoBehaviour
             /// <summary>
             /// setup sprint mechanic
             /// </summary>
-            /// 
 
             if (manager.hasGenerate)
             {
@@ -81,9 +84,6 @@ public class charaMove : MonoBehaviour
             myRb.velocity = new Vector2((moveHori * moveSpeed), (moveVer * moveSpeed));
 
 
-            /// <summary>
-            /// setup sprint mechanic
-            /// </summary>
             if (moveHori > 0 && isLeft)
             {
                 transform.localScale = new Vector2(1, 1);

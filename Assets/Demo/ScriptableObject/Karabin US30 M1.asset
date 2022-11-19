@@ -21,6 +21,6 @@ MonoBehaviour:
     banyak peluru. \nKarabin termasuk tipe senjata range."
   weaponDamage: 45
   weaponAmmo: 9
-  weaponMagazine: 4
+  weaponMagazine: 27
   weaponRadius: 3.3
   velocitySpeed: 20

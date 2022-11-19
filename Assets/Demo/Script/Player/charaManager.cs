@@ -25,6 +25,12 @@ public class charaManager : MonoBehaviour
 
     [Header("Reference")]
     public charaMove chara;
+    weaponShoot weapBullet;
+
+    void Awake()
+    {
+        weapBullet = GameObject.FindGameObjectWithTag("weapon").GetComponent<weaponShoot>();
+    }
 
     void Start()
     {
@@ -66,5 +72,14 @@ public class charaManager : MonoBehaviour
         {
             energyEffect.fillAmount = energyBar.fillAmount;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("ammo"))
+        {
+            weapBullet.addAmmo(weapBullet._SOWeapDef.weaponAmmo);
+            Destroy(other.gameObject);
+        }        
     }
 }

@@ -9,6 +9,9 @@ TagManager:
   - enemy
   - boss
   - weapon
+  - wall
+  - ammo
+  - bullet
   layers:
   - Default
   - TransparentFX
