@@ -5,8 +5,6 @@ using TMPro;
 
 public class weaponManager : MonoBehaviour
 {
-    [SerializeField] int ammoIndex;
-    [SerializeField] int magazineIndex;
     public TextMeshProUGUI ammoUI;
     public GameObject noAmmo;
     weaponShoot weaponS;
@@ -15,14 +13,12 @@ public class weaponManager : MonoBehaviour
     private void Awake()
     {
         weaponS = GameObject.FindGameObjectWithTag("weapon").GetComponent<weaponShoot>();
-        ammoIndex = weaponS.currentAmmo;
-        magazineIndex = weaponS.currentMagazine;
     }
 
     private void Update()
     {
         ammoUI.text = weaponS.currentAmmo + ("/") + weaponS.currentMagazine;
-        if (ammoIndex <= 0 && magazineIndex <= 0 && Input.GetKeyDown(KeyCode.Space))
+        if (weaponS.currentAmmo <= 0 && weaponS.currentMagazine <= 0 && Input.GetKeyDown(KeyCode.Z))
         {
             StartCoroutine(noAmmoUICoroutine());
         }

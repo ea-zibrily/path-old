@@ -12,6 +12,7 @@ TagManager:
   - wall
   - ammo
   - bullet
+  - aim
   layers:
   - Default
   - TransparentFX

@@ -10,12 +10,12 @@ public class weaponBullet : MonoBehaviour
     /// </summary>
     private void OnTriggerEnter2D(Collider2D other)
     {
-        /*
-        if (other.CompareTag("wall"))
+        
+        if (other.CompareTag("enemy"))
         {
-            Destroy(gameObject);
+            Destroy(other.gameObject);
         }
-        */
+        
     }
 
     /// <summary>
@@ -24,7 +24,7 @@ public class weaponBullet : MonoBehaviour
     /// </summary>
     private void OnCollisionEnter2D(Collision2D other)
     {
-         Destroy(gameObject);
+        Destroy(gameObject);
     }
 
 }

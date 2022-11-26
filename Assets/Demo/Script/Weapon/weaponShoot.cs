@@ -9,12 +9,19 @@ public class weaponShoot : MonoBehaviour
     public Transform firePoint;
     public bool isShoot;
 
+
     [Header("Scriptable Object Component")]
     public weaponDefinition _SOWeapDef;
+
 
     [Header("Ammo")]
     public int currentAmmo;
     public int currentMagazine;
+
+    [Header("Aim Targeting")]
+    GameObject crossHair;
+    Transform enemy;
+    Vector2 lockTarget;
 
 
     [Header("Reference")]
@@ -28,6 +35,8 @@ public class weaponShoot : MonoBehaviour
     {
         myAnim = GetComponent<Animator>();
         charaDir = GameObject.Find("Chara").GetComponent<charaMove>();
+        crossHair = GameObject.FindGameObjectWithTag("aim");
+        enemy = GameObject.FindGameObjectWithTag("enemy").transform;
     }
 
     void Start()
@@ -46,36 +55,48 @@ public class weaponShoot : MonoBehaviour
                 myAnim.SetTrigger("shoot");
             }
         }
+        if (currentAmmo <= 0)
+        {
+            //myAnim.SetTrigger("reload");
+            weapReload();
+        }
 
         if (Input.GetKeyDown(KeyCode.C))
         {
             //myAnim.SetTrigger("reload");
             weapReload();
         }
-        
-        /*
-        //destroy bullet - masih bug not working
-        if (Vector2.Distance(firePoint.position, bulletPre.transform.position) > 5f)
-        {
-            Destroy(bulletPre.gameObject);
-        }
-        */
 
     }
 
     public void shoot()
     {
+        Vector2 shootDir = charaDir.crossHair.transform.localPosition;
+        shootDir.Normalize();
+        Vector2 shootLockDir = charaDir.crossHair.transform.position;
+        shootLockDir.Normalize();
+
         bullet = Instantiate(bulletPre, firePoint.position, firePoint.rotation);
         myRb = bullet.GetComponent<Rigidbody2D>();
+
         if (charaDir.isLeft)
         {
-            myRb.AddForce((firePoint.right * -1) * _SOWeapDef.velocitySpeed, ForceMode2D.Impulse);
+            //myRb.AddForce((firePoint.right * -1) * _SOWeapDef.velocitySpeed, ForceMode2D.Impulse);
+            myRb.velocity = shootDir * _SOWeapDef.velocitySpeed * -1;
+
+            if (charaDir.isDown || charaDir.isUp)
+            {
+                myRb.velocity = shootDir * _SOWeapDef.velocitySpeed;
+            }
         }
         if (!charaDir.isLeft)
         {
-            myRb.AddForce(firePoint.right * _SOWeapDef.velocitySpeed, ForceMode2D.Impulse);
+            //myRb.AddForce(firePoint.right * _SOWeapDef.velocitySpeed, ForceMode2D.Impulse);
+            myRb.velocity = shootDir * _SOWeapDef.velocitySpeed;
         }
+
         currentAmmo--;
+        Destroy(bullet, 5.5f);
     }
 
     void weapReload()
@@ -112,4 +133,14 @@ public class weaponShoot : MonoBehaviour
             currentMagazine = _SOWeapDef.weaponMagazine;
         }
     }
+
+    /*
+    public void weapAiming()
+    {
+        lockTarget = enemy.position - transform.position;
+        lockTarget.Normalize();
+
+        crossHair.transform.position = enemy.position;
+    }
+    */
 }
