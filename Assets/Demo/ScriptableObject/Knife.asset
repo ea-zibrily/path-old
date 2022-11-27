@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a303f546592b6428cc7bacf2964302, type: 3}
+  m_Name: Knife
+  m_EditorClassIdentifier: 
+  meleeName: Knife
+  weaponType: 0
+  meleePassive: 0
+  meleeDescription: "Knife merupakan senjata ketiga yang\ndapat player beli saat
+    menjadi Weapon\nMastery level 2.  Knife memiliki bentuk\nsama seperti pisau komando
+    pada \numumnya. \nKnife termasuk tipe senjata melee."
+  meleeDamage: 24
+  meleeRadius: 0.5
+  meleeBetweenAttack: 0.5

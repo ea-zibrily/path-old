@@ -19,6 +19,7 @@ public class charaMove : MonoBehaviour
 
     [Header("Aiming")]
     public GameObject crossHair;
+    public GameObject crossHair2;
     public float crossHairRadius;
     GameObject[] enemyObjs;
     public bool isLock;
@@ -69,7 +70,13 @@ public class charaMove : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X) && isArea())
         {
-            lockTarget();
+            crossHair2.SetActive(true);
+            crossHair.SetActive(false);
+        }
+        if (!isArea())
+        {
+            crossHair2.SetActive(false);
+            crossHair.SetActive(true);
         }
         
     }
@@ -182,27 +189,7 @@ public class charaMove : MonoBehaviour
                 crossHair.transform.localPosition = new Vector2(charaDir.x * crossHairRadius * -1.0f, crossHair.transform.localPosition.y);
             }
         }
-    }
-
-    void lockTarget()
-    {
-        Collider2D[] isEnemy = Physics2D.OverlapCircleAll(targetRad.position, crossHairRadius, whatisTarget);
-
-        // Set first found
-        Collider2D nearEnemy = null;
-        float shortestDistance = Mathf.Infinity;
-
-        for (int i = 0; i < isEnemy.Length; i++)
-        {
-            if (Vector3.Distance(transform.position, isEnemy[i].transform.position) < shortestDistance)
-            {
-                //shortestDistance = newDist;
-                nearEnemy = isEnemy[i];
-                crossHair.transform.position = nearEnemy.transform.position;
-
-            }
-        }
-    }
+    } 
 
     bool isArea()
     {

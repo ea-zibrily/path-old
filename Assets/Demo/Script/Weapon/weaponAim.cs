@@ -5,7 +5,10 @@ using UnityEngine;
 public class weaponAim : MonoBehaviour
 {
     GameObject[] enemyObjs;
-    List<Transform> enemy = new List<Transform>();
+    public Transform target;
+    public float radius;
+    public LayerMask targets;
+    //List<Transform> enemy = new List<Transform>();
 
     private void Awake()
     {
@@ -18,7 +21,7 @@ public class weaponAim : MonoBehaviour
             enemy.Add(enemyObj.transform);
         }
         */
-        
+
 
     }
     void Start()
@@ -29,16 +32,29 @@ public class weaponAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, enemyObjs[0].transform.position, 3f);
-
-
         /*
         foreach(var enemyTrans in enemy)
         {
             transform.position = Vector2.MoveTowards(transform.position, enemyTrans.position, 3f);
         }
         */
-        
+
+        Collider2D[] isEnemy = Physics2D.OverlapCircleAll(target.position, radius, targets);
+
+        // Set first found
+        Collider2D nearEnemy = null;
+        float shortestDistance = Mathf.Infinity;
+
+        for (int i = 0; i < isEnemy.Length; i++)
+        {
+            if (Vector3.Distance(transform.position, isEnemy[i].transform.position) < shortestDistance)
+            {
+                //shortestDistance = newDist;
+                nearEnemy = isEnemy[i];
+                transform.position = nearEnemy.transform.position;
+                transform.position = Vector2.MoveTowards(transform.position, nearEnemy.transform.position, 3f);
+            }
+        }
 
     }
 }
