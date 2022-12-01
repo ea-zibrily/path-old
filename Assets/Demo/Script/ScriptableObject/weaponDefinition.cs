@@ -15,12 +15,13 @@ public class weaponDefinition : ScriptableObject
     //multiline dipake biar bisa add enter d inspector
     public string weaponDescription;
 
-    [Header("Technical Weapon Traits")]
+    [Header("Technical Range Weapon Traits")]
     public int weaponDamage;
     public int weaponAmmo;
     public int weaponMagazine;
     public float weaponRadius;
     public float velocitySpeed;
+
 }
 
 

@@ -15,23 +15,24 @@ public class weaponMelee : MonoBehaviour
 
     [Header("References")]
     Animator myAnim;
+    questManager questManager;
 
     void Awake()
     {
         myAnim = GetComponent<Animator>();
+        questManager = GameObject.Find("QuestManager").GetComponent<questManager>();
     }
 
     private void Start()
     {
-        //attackRange = _SOMelee.meleeRadius;
-        Debug.Log(attackRange);
+        attackRange = _SOMelee.meleeRadius;
     }
 
     void Update()
     {
         if (betweenTime <= 0)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 myAnim.SetTrigger("attack");
                 detectEnemy();
@@ -50,7 +51,8 @@ public class weaponMelee : MonoBehaviour
     {
         foreach (Collider2D enemyCol in Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemy))
         {
-            Debug.Log("Enemy Detected");
+            Destroy(enemyCol.gameObject);
+            questManager.questCompleted[0] = true;
         }
     }
 

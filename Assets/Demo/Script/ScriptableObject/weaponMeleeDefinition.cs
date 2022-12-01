@@ -15,7 +15,7 @@ public class weaponMeleeDefinition : ScriptableObject
     //multiline dipake biar bisa add enter d inspector
     public string meleeDescription;
 
-    [Header("Technical Weapon Traits")]
+    [Header("Technical Melee Weapon Traits")]
     public int meleeDamage;
     public float meleeRadius;
     public float meleeBetweenAttack;

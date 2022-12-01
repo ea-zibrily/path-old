@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64e5b0e436d4bed9780211ae245f7b, type: 3}
+  m_Name: belakang_Data
+  m_EditorClassIdentifier: 
+  dataName: belakang
+  dragonBonesJSON: {fileID: 4900000, guid: 6b285b8ca21da0b4db774bd8667ebe7c, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: 8a0d40ba6bc77c24486caa6f65118377, type: 3}
+    texture: {fileID: 2800000, guid: efac3c93986338c4b8552767e13fc539, type: 3}
+    material: {fileID: 2100000, guid: fe5cd741a82a0aa45aec90a2d5cf6b87, type: 2}
+    uiMaterial: {fileID: 0}

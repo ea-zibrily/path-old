@@ -18,10 +18,9 @@ public class weaponShoot : MonoBehaviour
     public int currentAmmo;
     public int currentMagazine;
 
+
     [Header("Aim Targeting")]
     GameObject crossHair;
-    Transform enemy;
-    Vector2 lockTarget;
 
 
     [Header("Reference")]
@@ -29,14 +28,18 @@ public class weaponShoot : MonoBehaviour
     Animator myAnim;
     GameObject bullet;
     charaMove charaDir;
+    SpriteRenderer mySprite;
+    questManager questManager;
 
 
     void Awake()
     {
         myAnim = GetComponent<Animator>();
+        mySprite = GetComponent<SpriteRenderer>();
         charaDir = GameObject.Find("Chara").GetComponent<charaMove>();
+        questManager = GameObject.Find("QuestManager").GetComponent<questManager>();
         crossHair = GameObject.FindGameObjectWithTag("aim");
-        enemy = GameObject.FindGameObjectWithTag("enemy").transform;
+
     }
 
     void Start()
@@ -48,24 +51,32 @@ public class weaponShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentAmmo > 0)
+        if (mySprite.enabled == true)
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (currentAmmo > 0)
             {
-                myAnim.SetTrigger("shoot");
+                if (Input.GetKeyDown(KeyCode.Z))
+                {
+                    myAnim.SetTrigger("shoot");
+                }
+            }
+            if (currentAmmo <= 0)
+            {
+                //myAnim.SetTrigger("reload");
+                weapReload();
+            }
+
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                //myAnim.SetTrigger("reload");
+                weapReload();
             }
         }
-        if (currentAmmo <= 0)
+        else
         {
-            //myAnim.SetTrigger("reload");
-            weapReload();
+            Debug.Log(_SOWeapDef.weaponName + "Off Bro Awikwok");
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            //myAnim.SetTrigger("reload");
-            weapReload();
-        }
 
     }
 
@@ -73,11 +84,13 @@ public class weaponShoot : MonoBehaviour
     {
         Vector2 shootDir = charaDir.crossHair.transform.localPosition;
         shootDir.Normalize();
-        Vector2 shootLockDir = charaDir.crossHair.transform.position;
-        shootLockDir.Normalize();
 
         bullet = Instantiate(bulletPre, firePoint.position, firePoint.rotation);
         myRb = bullet.GetComponent<Rigidbody2D>();
+
+        //myRb.velocity = shootDir * _SOWeapDef.velocitySpeed;
+        //myRb.AddForce(shootDir * _SOWeapDef.velocitySpeed, ForceMode2D.Impulse);
+
 
         if (charaDir.isLeft)
         {
@@ -95,6 +108,7 @@ public class weaponShoot : MonoBehaviour
             myRb.velocity = shootDir * _SOWeapDef.velocitySpeed;
         }
 
+
         currentAmmo--;
         Destroy(bullet, 5.5f);
     }
@@ -106,6 +120,8 @@ public class weaponShoot : MonoBehaviour
 
         currentAmmo += reloadAmm;
         currentMagazine -= reloadAmm;
+
+        questManager.questCompleted[1] = true;
     }
 
     public void addAmmo(int pickAmmo)
