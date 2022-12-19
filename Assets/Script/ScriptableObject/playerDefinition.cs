@@ -6,6 +6,6 @@ using UnityEngine;
 public class playerDefinition : ScriptableObject
 {
     public string playerName;
-    public float speed;
+    public float normalSpeed;
     public float sprintSpeed;
 }

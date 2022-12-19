@@ -489,18 +489,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 190261656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecab4c39f1fd6ca418106f5ac479f5b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2eb44c3febf670b488be019e4f48fd29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energy: 0
   maxEnergy: 10
-  energyUse: 0.02
-  energyGen: 0.5
-  disSpeed: 0.007
-  hasGenerate: 0
+  useEnergy: 0.02
+  regenEnergy: 0.5
+  energyHasGenerated: 0
+  dicreaseSpeed: 0.007
   energyBar: {fileID: 1071158018}
   energyEffect: {fileID: 301125976}
-  chara: {fileID: 190261660}
 --- !u!114 &190261660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,35 +508,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 190261656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1621ff625bd061e4990d3e4b7214e880, type: 3}
+  m_Script: {fileID: 11500000, guid: 3338e5e6ed387d34e927229f00373a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
-  sprintSpeed: 10
+  _SOPlayerDefinition: {fileID: 11400000, guid: e5b94a99aa3986a418d8c24597acc618, type: 2}
+  playerName: 
+  playerSpeed: 0
+  playerSprintSpeed: 0
+  playerOriginSpeed: 0
+  playerDirection: {x: 0, y: 0}
   isSprint: 0
-  isLeft: 0
-  isUp: 0
-  isDown: 0
-  dustPart: {fileID: 1849252198}
-  dustPoint: {fileID: 784692814}
-  crossHair: {fileID: 1938569197}
-  crossHair2: {fileID: 1802462909}
-  crossHairRadius: 0
-  isLock: 0
-  charaDir: {x: 0, y: 0}
-  dirSpeed: 0
-  targetRad: {fileID: 282802406}
-  radius: 3.3
-  whatisTarget:
-    serializedVersion: 2
-    m_Bits: 128
-  target: {fileID: 282802406}
-  radiusL: 3.3
-  targets:
-    serializedVersion: 2
-    m_Bits: 128
-  manager: {fileID: 190261659}
-  controll: {fileID: 491760519}
+  inGameButton: 300100007a00000078000000
 --- !u!61 &190261661
 BoxCollider2D:
   m_ObjectHideFlags: 0
