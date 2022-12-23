@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88ff5142992f6844bcf765a4220e9d9, type: 3}
+  m_Name: Conv_05
+  m_EditorClassIdentifier: 
+  speakRight: {fileID: 0}
+  speakLeft: {fileID: 0}
+  lines:
+  - character: {fileID: 0}
+    text: Aku pun pergi naik ke lantai 3
+  - character: {fileID: 0}
+    text: 'Saat sebelum sampai ke ruangan tujuan aku melihat seseorang dengan baju
+      seperti pejuang masuk ke salah satu ruangan. Saat itu terbesit di pikiranku
+      bagaimana kalau aku tanya bapak itu untuk menjelaskan tentang salah satu objek
+      sejarah karena kan dia memakai baju pejuang dan harusnya dia tau satu dua hal
+      tentang sejarah yang diceritakan pak guru. '

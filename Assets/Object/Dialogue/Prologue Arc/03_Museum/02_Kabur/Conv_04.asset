@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88ff5142992f6844bcf765a4220e9d9, type: 3}
+  m_Name: Conv_04
+  m_EditorClassIdentifier: 
+  speakRight: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+  speakLeft: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: Sepertinya jalan ini mengarah ke ruangan yang ingin kutuju
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: Aku harus cepat agar dapat bersantai dan bermalas-malasan disana
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: Kalau tidak salah ruangannya ada di lantai 3 kan ya?

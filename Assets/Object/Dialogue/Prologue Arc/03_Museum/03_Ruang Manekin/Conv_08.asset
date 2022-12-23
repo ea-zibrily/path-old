@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88ff5142992f6844bcf765a4220e9d9, type: 3}
+  m_Name: Conv_08
+  m_EditorClassIdentifier: 
+  speakRight: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+  speakLeft: {fileID: 0}
+  lines:
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: Bodo amat lah, aku harus masuk sekarang sebelum orang itu pergi lewat pintu
+      lain yang ada di dalam
+  - character: {fileID: 0}
+    text: Aku pun langsung masuk ke ruangan itu dan betapa terkejutnya ternyata di
+      dalam ruangan itu berisi manekin berpakaian layaknya pejuang jaman dahulu.
+      Ada juga yang memakai baju layaknya penjajah. Mungkin ini tempat penyimpanan
+      untuk pengganti patung yang ada di area depan tadi.
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: Aku harus cepat menemukan orang tadi dan segera keluar dari ruangan ini
+      karena ntah kenapa perasaanku mulai tidak enak
+  - character: {fileID: 0}
+    text: Aku mulai mencari dimana keberadaan orang tadi. Semakin dalam aku mencari
+      semakin banyak manekin yang ada dan mulai muncul perasaan seakan aku sedang
+      diawasi oleh para manekin ini
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: Duh aku mulai merasa takut kalau lama-lama disini
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: Aku harus segera menemukan orang tadi dan keluar dari sini
+  - character: {fileID: 0}
+    text: Aku melanjutkan pencarian dan tanpa sadar aku sudah menghabiskan 1 jam
+      di dalam raungan ini
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: Aneh padahal hanya ada satu jalan dari depan sampai ke belakang dan hanya
+      ada satu jalan keluar tapi aku masih belum bisa menemukan orang tadi
+  - character: {fileID: 0}
+    text: "Kraakk\u2026. Krakkk"
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: ?????
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: Suara apa itu???
+  - character: {fileID: 0}
+    text: "Krakk\u2026 Krakkk\u2026 Kraakkk\u2026"
+  - character: {fileID: 0}
+    text: Suara itu semakin kencang.
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: WOI SIAPA DISANA???
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: Anehh
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: Tidak ada yang merespon sama sekali
+  - character: {fileID: 0}
+    text: Karena takut, aku pun lari keluar dari ruangan dan mencoba untuk turun
+      kembali ke tempat pak guru, namun tetap seperti ada yang sedang mengerjarku
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: WOI BERHENTI MENGEJARKU!
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: "WOI SUDAH KUBILANG BERHENTI MENGEJARKUUU\u2026"
+  - character: {fileID: 0}
+    text: Aku mencoba turun ke lantai 2 tapi rasanya aku tetap berada di lantai 3,
+      itu dibuktikan dengan pintu ruangan manekin yang terbuka setelah aku keluar
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: Bagaimana ini aku sudah tidak sanggup turun lagi
+  - character: {fileID: 11400000, guid: 0a75bccc85452e440a53668e5221beb1, type: 2}
+    text: Aku sudah tidak kuat lagi

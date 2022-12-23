@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88ff5142992f6844bcf765a4220e9d9, type: 3}
+  m_Name: Conv_01
+  m_EditorClassIdentifier: 
+  speakRight: {fileID: 0}
+  speakLeft: {fileID: 0}
+  lines:
+  - character: {fileID: 0}
+    text: Jadi begitulah cerita bagaimana aku bisa ada dalam keadaan sekarang. Sambil
+      menatap keluar jendela bis aku berpikir apa yang akan aku coba temukan dan
+      jelaskan nanti karena dari awal aku tidak mengerti tentang cerita pak guru.
+      Aku juga tidak suka dengan pelajaran sejarah karena aku sama sekali tidak tertarik
+      tentang cerita yang membosankan seperti itu karena kita sudah hidup pada jaman
+      sekarang buat apa kita memikirkan masa lalu
